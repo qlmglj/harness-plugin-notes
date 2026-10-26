@@ -25,6 +25,13 @@
 - [安装与配置清单](docs/install-checklist.md)
 - [健康检查脚本](scripts/health_check.ps1)：从环境变量读 Key，只读调用 `/v1/models`，打印可用模型数
 
+```powershell
+$env:AGNES_API_KEY = "sk-..."          # 只在当前终端生效，不落盘
+powershell -ExecutionPolicy Bypass -File ./scripts/health_check.ps1
+```
+
+> Windows 默认禁止运行 .ps1 脚本，报"禁止运行脚本"时用 `-ExecutionPolicy Bypass`（只对本次执行生效，不改系统设置）。
+
 ## 说明
 
 仓库不含任何密钥。脚本从 `AGNES_API_KEY` 环境变量读取凭证，请勿把 Key 写进代码或提交记录。

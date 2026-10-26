@@ -1,4 +1,4 @@
-# 只读健康检查：从环境变量读取 Key，确认服务连通性与可用模型数量。
+﻿# 只读健康检查：从环境变量读取 Key，确认服务连通性与可用模型数量。
 # 用法：$env:AGNES_API_KEY = "sk-..." ; ./health_check.ps1
 param(
     [string]$BaseUrl = "https://api.agnes-ai.cn",
